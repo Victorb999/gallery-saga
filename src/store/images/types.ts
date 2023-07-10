@@ -8,6 +8,7 @@ export enum ActionTypes {
   FETCH_IMAGE_DETAILS_REQUEST = 'FETCH_IMAGE_DETAILS_REQUEST',
   FETCH_IMAGE_DETAILS_SUCCESS = 'FETCH_IMAGE_DETAILS_SUCCESS',
   FETCH_IMAGE_DETAILS_FAILURE = 'FETCH_IMAGE_DETAILS_FAILURE',
+  CHANGE_PAGE = 'CHANGE_PAGE',
 }
 
 /**
@@ -30,4 +31,5 @@ export interface ImagesState {
   readonly dataImageDetail: Image
   readonly loading: boolean
   readonly error: boolean
+  readonly page: number
 }

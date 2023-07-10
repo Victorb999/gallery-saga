@@ -1,6 +1,6 @@
 import { Typography } from '@mui/material'
 import Box from '@mui/material/Box'
-import { Link } from 'react-router-dom'
+import { BackButton } from '../BackButton/BackButton'
 
 interface ImageItemProps {
   author: string
@@ -41,7 +41,7 @@ const ImageInfo = ({ author, download_url, height, width }: ImageItemProps) => {
           <b>Download:</b> <a href={download_url}>{download_url}</a>
         </Typography>
         <Typography sx={{ mb: 2 }} variant="h6" component="div">
-          <Link to="/">Voltar</Link>
+          <BackButton />
         </Typography>
       </Box>
     </Box>

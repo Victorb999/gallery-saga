@@ -1,19 +1,45 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-import { fetchImagesRequest } from '../../store/images/actions'
+import { changePage, fetchImagesRequest } from '../../store/images/actions'
 import { ImagesState } from '../../store/images/types'
 import { ImageGallery } from '../../components/ImageGallery/ImageGallery'
 
 const MainPage = () => {
-  const { data, loading, error } = useSelector((state: ImagesState) => state)
+  const { data, loading, error, page } = useSelector(
+    (state: ImagesState) => state,
+  )
   const dispatch = useDispatch()
 
-  useEffect(() => {
-    dispatch(fetchImagesRequest())
-  }, [dispatch])
-  console.log('ATIVOU', data, loading, error)
+  const [isLoading, setIsLoading] = useState(false)
 
-  if (loading) {
+  useEffect(() => {
+    dispatch(fetchImagesRequest(page))
+  }, [dispatch, page])
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (
+        window.innerHeight + document.documentElement.scrollTop >=
+          document.documentElement.offsetHeight - 200 &&
+        !isLoading
+      ) {
+        setIsLoading(true)
+        dispatch(changePage(page + 1))
+      }
+    }
+
+    window.addEventListener('scroll', handleScroll)
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll)
+    }
+  }, [dispatch, page, isLoading])
+
+  useEffect(() => {
+    setIsLoading(false)
+  }, [data])
+
+  if (loading && page === 1) {
     return <div>Loading...</div>
   }
 
@@ -24,6 +50,7 @@ const MainPage = () => {
   return (
     <div>
       <ImageGallery images={data} />
+      {isLoading && <div>Loading...</div>}
     </div>
   )
 }
