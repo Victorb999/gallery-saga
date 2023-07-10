@@ -1,10 +1,13 @@
 /**
  * Action types
  */
-export enum ImagesTypes {
-  LOAD_REQUEST = 'LOAD_REQUEST',
-  LOAD_SUCCCES = 'LOAD_SUCCCES',
-  LOAD_FAILURE = 'LOAD_FAILURE'
+export enum ActionTypes {
+  FETCH_IMAGES_REQUEST = 'FETCH_IMAGES_REQUEST',
+  FETCH_IMAGES_SUCCESS = 'FETCH_IMAGES_SUCCESS',
+  FETCH_IMAGES_FAILURE = 'FETCH_IMAGES_FAILURE',
+  FETCH_IMAGE_DETAILS_REQUEST = 'FETCH_IMAGE_DETAILS_REQUEST',
+  FETCH_IMAGE_DETAILS_SUCCESS = 'FETCH_IMAGE_DETAILS_SUCCESS',
+  FETCH_IMAGE_DETAILS_FAILURE = 'FETCH_IMAGE_DETAILS_FAILURE',
 }
 
 /**
@@ -24,6 +27,7 @@ export interface Image {
  */
 export interface ImagesState {
   readonly data: Image[]
+  readonly dataImageDetail: Image
   readonly loading: boolean
   readonly error: boolean
 }

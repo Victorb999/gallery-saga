@@ -9,7 +9,7 @@ interface ImageItemProps {
 
 const ImageItem = ({ author, download_url, id }: ImageItemProps) => {
   return (
-    <Link to={`image/${id}`}>
+    <Link to={`image/${id}`} className="image-item">
       <ImageListItem>
         <img src={`${download_url}`} alt={author} loading="lazy" />
       </ImageListItem>
