@@ -2,7 +2,7 @@ import ImageList from '@mui/material/ImageList'
 import { Image } from '../../store/images/types'
 import { ImageItem } from '../ImageItem/ImageItem'
 
-interface ImageGalleryProps {
+export interface ImageGalleryProps {
   images: Image[]
 }
 

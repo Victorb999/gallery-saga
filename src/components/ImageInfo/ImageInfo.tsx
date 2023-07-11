@@ -2,7 +2,7 @@ import { Typography } from '@mui/material'
 import Box from '@mui/material/Box'
 import { BackButton } from '../BackButton/BackButton'
 
-interface ImageItemProps {
+export interface ImageItemProps {
   author: string
   download_url: string
   height: number

@@ -3,7 +3,7 @@ import ImageListItem from '@mui/material/ImageListItem'
 import { Link } from 'react-router-dom'
 import React, { useState } from 'react'
 
-interface ImageItemProps {
+export interface ImageItemProps {
   author: string
   download_url: string
   id: number
