@@ -8,14 +8,16 @@ import { LoadingComponent } from '../../components/LoadingComponent/LoadingCompo
 import { ErrorComponent } from '../../components/ErrorComponent/ErrorComponent'
 
 const ImageDetails = () => {
-  const { id } = useParams()
-  const { dataImageDetail, loading, error } = useSelector(
-    (state: ImagesState) => state,
-  )
+  const params = useParams()
+  const id = params?.id
+  const imagesState = useSelector((state: ImagesState) => state)
+  const { dataImageDetail, loading, error } = imagesState || {}
   const dispatch = useDispatch()
 
   useEffect(() => {
-    if (id) dispatch(fetchImageDetailsRequest(id))
+    if (id) {
+      dispatch(fetchImageDetailsRequest(id))
+    }
   }, [dispatch, id])
 
   if (loading) {
@@ -28,12 +30,14 @@ const ImageDetails = () => {
 
   return (
     <>
-      <ImageInfo
-        author={dataImageDetail.author}
-        download_url={dataImageDetail.download_url}
-        height={dataImageDetail.height}
-        width={dataImageDetail.width}
-      />
+      {dataImageDetail && (
+        <ImageInfo
+          author={dataImageDetail.author}
+          download_url={dataImageDetail.download_url}
+          height={dataImageDetail.height}
+          width={dataImageDetail.width}
+        />
+      )}
     </>
   )
 }

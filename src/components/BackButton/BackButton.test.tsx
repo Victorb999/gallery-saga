@@ -15,7 +15,7 @@ describe('BackButton', () => {
     jest.clearAllMocks()
   })
 
-  it('deve renderizar corretamente', () => {
+  it('should render back button', () => {
     const { getByRole } = render(<BackButton />)
 
     const buttonElement = getByRole('button')
@@ -24,7 +24,7 @@ describe('BackButton', () => {
     expect(buttonElement).toHaveTextContent('Voltar')
   })
 
-  it('deve chamar useNavigate ao clicar no botão', () => {
+  it('should call useNavigate', () => {
     const mockNavigate = jest.fn()
     ;(useNavigate as jest.Mock).mockImplementation(() => mockNavigate)
 

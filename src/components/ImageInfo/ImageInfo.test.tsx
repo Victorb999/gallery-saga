@@ -11,7 +11,7 @@ describe('ImageInfo', () => {
     width: 1200,
   }
 
-  it('deve renderizar corretamente as informações da imagem', () => {
+  it('should render infos', () => {
     render(
       <Router>
         <ImageInfo {...mockProps} />

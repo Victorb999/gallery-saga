@@ -27,7 +27,7 @@ describe('ImageGallery', () => {
     },
   ]
 
-  it('deve renderizar número correto de imagens', () => {
+  it('should render number of images', () => {
     const { getAllByTestId } = render(
       <BrowserRouter>
         <ImageGallery images={mockImages} />

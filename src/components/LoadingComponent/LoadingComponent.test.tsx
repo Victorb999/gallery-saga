@@ -3,7 +3,7 @@ import { render, screen } from '@testing-library/react'
 import { LoadingComponent } from './LoadingComponent'
 
 describe('LoadingComponent', () => {
-  it('deve renderizar corretamente o componente de carregamento', () => {
+  it('should render correctly loader', () => {
     render(<LoadingComponent />)
 
     const loadingTextElement = screen.getByText(

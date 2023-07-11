@@ -2,7 +2,7 @@
 import { render } from '@testing-library/react'
 import { ErrorComponent } from './ErrorComponent'
 describe('ErrorComponent', () => {
-  test('deve renderizar a mensagem de erro corretamente', () => {
+  test('should render error', () => {
     const { getByText } = render(<ErrorComponent />)
     expect(
       getByText('Ops ocorreu um erro ao carregar as imagens'),

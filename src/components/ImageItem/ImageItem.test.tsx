@@ -27,7 +27,7 @@ describe('ImageItem', () => {
     expect(imgElement).toHaveAttribute('alt', 'John Doe')
   })
 
-  it('deve renderizar o esqueleto enquanto a imagem está carregando', () => {
+  it('should render skeleton', () => {
     render(
       <Router>
         <ImageItem {...mockProps} />
@@ -39,7 +39,7 @@ describe('ImageItem', () => {
     expect(skeletonElement).toBeInTheDocument()
   })
 
-  it('deve remover o esqueleto após o carregamento da imagem', () => {
+  it('should remove skeleton when image is loaded', () => {
     render(
       <Router>
         <ImageItem {...mockProps} />
