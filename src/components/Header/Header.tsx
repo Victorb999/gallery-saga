@@ -5,16 +5,10 @@ const Header = () => {
   return (
     <AppBar position="static" sx={{ backgroundColor: '#353535' }}>
       <Toolbar>
-        <Typography
-          variant="h5"
-          sx={{
-            color: '#ff6400',
-            fontWeight: 'bold',
-            letterSpacing: '2px',
-            textTransform: 'capitalize',
-          }}
-        >
-          GALLERY SAGA
+        <Typography variant="h5">
+          <a href="/" className="logo">
+            GALLERY SAGA
+          </a>
         </Typography>
       </Toolbar>
     </AppBar>

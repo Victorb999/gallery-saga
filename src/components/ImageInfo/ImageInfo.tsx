@@ -38,7 +38,10 @@ const ImageInfo = ({ author, download_url, height, width }: ImageItemProps) => {
           <b>Largura imagem original:</b> {width}
         </Typography>
         <Typography sx={{ mb: 2 }} variant="h6" component="div">
-          <b>Download:</b> <a href={download_url}>{download_url}</a>
+          <b>Abrir em tamanho total:</b>{' '}
+          <a href={download_url} target="_blank" rel="noreferrer">
+            {download_url}
+          </a>
         </Typography>
         <Typography sx={{ mb: 2 }} variant="h6" component="div">
           <BackButton />

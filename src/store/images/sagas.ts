@@ -27,8 +27,8 @@ function* fetchImagesSaga(action: FetchImagesRequestAction) {
     )
 
     yield put(fetchImagesSuccess(response.data))
-  } catch (err) {
-    yield put(fetchImagesFailure('teste'))
+  } catch (error) {
+    yield put(fetchImagesFailure((error as Error).message))
   }
 }
 
@@ -40,7 +40,7 @@ function* fetchImageDetailsSaga(action: FetchImageDetailsRequestAction) {
     )
     yield put(fetchImageDetailsSuccess(imageDetails.data))
   } catch (error) {
-    yield put(fetchImageDetailsFailure('teste'))
+    yield put(fetchImageDetailsFailure((error as Error).message))
   }
 }
 

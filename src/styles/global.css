@@ -8,6 +8,14 @@
   max-width: 60rem;
 }
 
+.logo {
+  color: #ff6400;
+  font-weight: bold;
+  letter-spacing: 2px;
+  text-transform: capitalize;
+  text-decoration: none;
+}
+
 .image-item{
   background-color: #000;
   display: flex;
@@ -16,6 +24,7 @@
   transition: filter 0.3s ease-in-out;
 }
 
-.image-item:hover{
+.image-item:hover, .logo:hover{
   filter: brightness(0.8); 
 }
+
