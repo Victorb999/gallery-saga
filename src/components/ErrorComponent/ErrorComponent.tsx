@@ -1,6 +1,11 @@
 import { Box, Typography } from '@mui/material'
 import { ReactComponent as ErrorSvg } from '../../assets/undraw_error.svg'
 
+/**
+ * Renderiza o componente de erro
+ *
+ * @return {JSX.Element} O componente de erro renderizado
+ */
 const ErrorComponent = () => {
   return (
     <Box

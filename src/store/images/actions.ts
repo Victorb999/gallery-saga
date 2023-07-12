@@ -36,6 +36,7 @@ export interface changePageAction {
 }
 
 // Definição das funções que criam as ações
+
 export const fetchImagesRequest = (page: number): FetchImagesRequestAction => ({
   type: ActionTypes.FETCH_IMAGES_REQUEST,
   page,

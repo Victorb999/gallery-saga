@@ -1,6 +1,11 @@
 import React from 'react'
 import { AppBar, Toolbar, Typography } from '@mui/material'
 
+/**
+ * Renderiza o Header
+ *
+ * @return {JSX.Element} O componente header renderizado
+ */
 const Header = () => {
   return (
     <AppBar position="static" sx={{ backgroundColor: '#353535' }}>

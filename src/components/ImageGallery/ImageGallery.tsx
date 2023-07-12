@@ -6,6 +6,12 @@ export interface ImageGalleryProps {
   images: Image[]
 }
 
+/**
+ * Renderiza uma galeria de imagens
+ *
+ * @param {Image[]} images - Um array com as imagens
+ * @return {JSX.Element} - A galeria de imagens renderizada
+ */
 const ImageGallery = ({ images }: ImageGalleryProps) => {
   return (
     <ImageList cols={4}>

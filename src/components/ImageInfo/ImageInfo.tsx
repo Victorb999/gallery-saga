@@ -9,6 +9,15 @@ export interface ImageItemProps {
   width: number
 }
 
+/**
+ * Renderiza as informações de uma imagem
+ *
+ * @param {ImageItemProps} author - O autor da imagem
+ * @param {ImageItemProps} download_url - A url de download da imagem
+ * @param {ImageItemProps} height - A altura da imagem
+ * @param {ImageItemProps} width - A largura da imagem
+ * @return {JSX.Element} O componente com as informações das imagens renderizado
+ */
 const ImageInfo = ({ author, download_url, height, width }: ImageItemProps) => {
   return (
     <Box sx={{ padding: '32px', maxWidth: '100%', display: 'flex' }}>

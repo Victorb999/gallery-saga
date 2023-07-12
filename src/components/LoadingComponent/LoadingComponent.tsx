@@ -1,6 +1,11 @@
 import { Box, Typography } from '@mui/material'
 import { ReactComponent as LoadingSvg } from '../../assets/undraw_load.svg'
 
+/**
+ * Renderiza o componente de loading
+ *
+ * @return {JSX.Element} O componente de loading
+ */
 const LoadingComponent = () => {
   return (
     <Box

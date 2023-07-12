@@ -19,6 +19,12 @@ interface ResponseImageDetails {
   data: Image
 }
 
+/**
+ * A função que faz consulta na api buscando as imagens
+ *
+ * @param {FetchImagesRequestAction} action - A objeto de ação contendo os parâmetros
+ * @return {void}
+ */
 function* fetchImagesSaga(action: FetchImagesRequestAction) {
   try {
     const response: ResponseImages = yield call(
@@ -32,6 +38,12 @@ function* fetchImagesSaga(action: FetchImagesRequestAction) {
   }
 }
 
+/**
+ * A função que faz consulta na api buscando o detalhe de uma imagem
+ *
+ * @generator
+ * @param {FetchImageDetailsRequestAction} action - A objeto de ação contendo os parâmetros
+ */
 function* fetchImageDetailsSaga(action: FetchImageDetailsRequestAction) {
   try {
     const imageDetails: ResponseImageDetails = yield call(

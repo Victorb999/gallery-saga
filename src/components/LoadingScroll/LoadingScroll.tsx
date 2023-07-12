@@ -1,5 +1,10 @@
 import { Box, Typography } from '@mui/material'
 
+/**
+ * Renderiza o componente de loading no scroll
+ *
+ * @return {ReactNode} O componente de loading no scroll
+ */
 const LoadingScroll = () => {
   return (
     <Box

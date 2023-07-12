@@ -8,18 +8,27 @@ import { LoadingComponent } from '../../components/LoadingComponent/LoadingCompo
 import { ErrorComponent } from '../../components/ErrorComponent/ErrorComponent'
 import { LoadingScroll } from '../../components/LoadingScroll/LoadingScroll'
 
+/**
+ * Renderiza a página principal.
+ *
+ * @return {JSX.Element} O elemento JSX que representa a página principal.
+ */
 const MainPage = () => {
   const [isLoading, setIsLoading] = useState(false)
+
+  /* Busca as váriaveis do redux */
   const { data, loading, error, page } = useSelector(
     (state: ImagesState) => state,
   )
   const dispatch = useDispatch()
 
   useEffect(() => {
+    /* Chama a função do redux para buscar as imagens */
     dispatch(fetchImagesRequest(page))
   }, [dispatch, page])
 
   useEffect(() => {
+    /* Função que verifica o scroll perto do fim da página para buscar as imagens */
     const handleScroll = () => {
       if (
         window.innerHeight + document.documentElement.scrollTop >=
@@ -39,13 +48,16 @@ const MainPage = () => {
   }, [dispatch, page, isLoading])
 
   useEffect(() => {
+    /* Quando as o dados mudam remove o scroll */
     setIsLoading(false)
   }, [data])
 
+  /* Retorna o Loading na primeira execução */
   if (loading && page === 1) {
     return <LoadingComponent />
   }
 
+  /* Feedback de erro */
   if (error) {
     return <ErrorComponent />
   }
