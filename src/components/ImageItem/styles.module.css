@@ -1,0 +1,15 @@
+.imageItem{
+  transition: filter 0.3s ease-in-out;
+  visibility: visible;
+}
+
+.loadingImage{
+  visibility: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.imageItem:hover{
+  filter: brightness(0.8); 
+}

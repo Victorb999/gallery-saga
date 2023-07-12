@@ -1,7 +1,9 @@
-import { Skeleton } from '@mui/material'
+import React, { useState } from 'react'
 import ImageListItem from '@mui/material/ImageListItem'
 import { Link } from 'react-router-dom'
-import React, { useState } from 'react'
+
+// styles
+import styles from './styles.module.css'
 
 export interface ImageItemProps {
   author: string
@@ -25,7 +27,10 @@ const ImageItem = ({ author, download_url, id }: ImageItemProps) => {
   }
 
   return (
-    <Link to={`image/${id}`} className={!isLoading ? 'image-item' : ''}>
+    <Link
+      to={`image/${id}`}
+      className={isLoading ? styles.loadingImage : styles.imageItem}
+    >
       <ImageListItem
         sx={{
           display: 'flex',
@@ -41,14 +46,6 @@ const ImageItem = ({ author, download_url, id }: ImageItemProps) => {
           onLoad={handleImageLoad}
           data-testid="image-test"
         />
-        {isLoading && (
-          <Skeleton
-            animation="wave"
-            width={327}
-            height={236}
-            data-testid="skeleton"
-          />
-        )}
       </ImageListItem>
     </Link>
   )

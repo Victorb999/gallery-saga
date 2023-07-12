@@ -18,9 +18,9 @@ describe('ImageInfo', () => {
       </Router>,
     )
 
-    const authorElement = screen.getByText('Author:')
-    const heightElement = screen.getByText('Altura imagem original:')
-    const widthElement = screen.getByText('Largura imagem original:')
+    const authorElement = screen.getByText('Author')
+    const heightElement = screen.getByText('Altura da imagem original')
+    const widthElement = screen.getByText('Largura da imagem original')
     const linkElement = screen.getByRole('link', {
       name: 'https://example.com/image.jpg',
     })
