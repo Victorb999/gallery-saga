@@ -28,10 +28,10 @@ const Header = () => {
               color: '#ff6400',
               fontWeight: 'bold',
               letterSpacing: '1.5px',
-              textTransform: 'capitalize',
+              textTransform: 'uppercase',
             }}
           >
-            GALLERY SAGA
+            Gallery Saga
           </Typography>
         </Link>
       </Toolbar>

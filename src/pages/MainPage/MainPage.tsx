@@ -49,7 +49,7 @@ const MainPage = () => {
   }, [dispatch, page, isLoading])
 
   useEffect(() => {
-    /* Quando as o dados mudam remove o scroll */
+    /* Quando as o dados mudam remove o scroll loading */
     setIsLoading(false)
   }, [data])
 

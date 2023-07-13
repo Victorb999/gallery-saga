@@ -14,7 +14,7 @@ export interface ImageGalleryProps {
  */
 const ImageGallery = ({ images }: ImageGalleryProps) => {
   return (
-    <ImageList variant="woven" cols={4} gap={8}>
+    <ImageList variant="woven" cols={4} gap={8} data-testid={'image-gallery'}>
       {images.map((item) => (
         <ImageItem
           author={item.author}
