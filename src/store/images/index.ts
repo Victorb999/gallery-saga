@@ -48,7 +48,7 @@ const reducer: Reducer<ImagesState> = (state = INITIAL_STATE, action) => {
       return {
         ...state,
         loading: false,
-        error: action.error,
+        error: true,
       }
     case ActionTypes.CHANGE_PAGE:
       return {

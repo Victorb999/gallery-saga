@@ -13,7 +13,7 @@ export interface FetchImagesSuccessAction {
 
 export interface FetchImagesFailureAction {
   type: ActionTypes.FETCH_IMAGES_FAILURE
-  error: string
+  error: boolean
 }
 
 export interface FetchImageDetailsRequestAction {
@@ -28,7 +28,7 @@ export interface FetchImageDetailsSuccessAction {
 
 export interface fetchImageDetailsFailureAction {
   type: ActionTypes.FETCH_IMAGE_DETAILS_FAILURE
-  error: string
+  error: boolean
 }
 export interface changePageAction {
   type: ActionTypes.CHANGE_PAGE
@@ -50,7 +50,7 @@ export const fetchImagesSuccess = (
 })
 
 export const fetchImagesFailure = (
-  error: string,
+  error: boolean,
 ): FetchImagesFailureAction => ({
   type: ActionTypes.FETCH_IMAGES_FAILURE,
   error,
@@ -71,7 +71,7 @@ export const fetchImageDetailsSuccess = (
 })
 
 export const fetchImageDetailsFailure = (
-  error: string,
+  error: boolean,
 ): fetchImageDetailsFailureAction => ({
   type: ActionTypes.FETCH_IMAGE_DETAILS_FAILURE,
   error,

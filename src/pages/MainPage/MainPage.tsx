@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { useSelector, useDispatch } from 'react-redux'
+import { useSelector, useDispatch, shallowEqual } from 'react-redux'
 import { changePage, fetchImagesRequest } from '../../store/images/actions'
 import { Box } from '@mui/material'
 import { ImagesState } from '../../store/images/types'
@@ -19,6 +19,7 @@ const MainPage = () => {
   /* Busca as váriaveis do redux */
   const { data, loading, error, page } = useSelector(
     (state: ImagesState) => state,
+    shallowEqual,
   )
   const dispatch = useDispatch()
 
@@ -72,7 +73,7 @@ const MainPage = () => {
         p: 8,
       }}
     >
-      <ImageGallery images={data} />
+      {data && <ImageGallery images={data} />}
       {isLoading && <LoadingScroll />}
     </Box>
   )
